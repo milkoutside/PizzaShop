@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SMrfy+4iingoIYQRNPW9SqPdPDd+UW1qP0sHar1kIC8xXsxJ5OOUaJUKSdRjBkdIic0dka+WvWNAm3AStB7h/A==",
+  "dgSpecHash": "5d9qpDITW2K2BBMvk4KB+vFWnOrmTw9vPSFF9T42/OW3l0QzezoCCpImUg6KVAx3M7pX2202POPFiVBDA4vmoQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alice\\Desktop\\Новая папка (20)\\PizzaApi\\PizzaApi.csproj",
+  "projectFilePath": "C:\\Users\\alice\\Desktop\\Новая папка (20)\\PizzaShop\\PizzaApi\\PizzaApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alice\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\alice\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

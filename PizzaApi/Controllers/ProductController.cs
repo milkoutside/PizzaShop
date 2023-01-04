@@ -42,4 +42,12 @@ public class ProductController : ControllerBase
 
         return product;
     }
+
+    [HttpGet("drinks")]
+    public async Task<List<Product>> GetDrinks()
+    {
+        var drinks = await _context.Product.Where(d => d.Category == "Drinks").ToListAsync();
+
+        return drinks;
+    }
 }

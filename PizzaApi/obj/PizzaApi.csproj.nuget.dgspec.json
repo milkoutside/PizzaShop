@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alice\\Desktop\\Новая папка (20)\\PizzaApi\\PizzaApi.csproj": {}
+    "C:\\Users\\alice\\Desktop\\Новая папка (20)\\PizzaShop\\PizzaApi\\PizzaApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alice\\Desktop\\Новая папка (20)\\PizzaApi\\PizzaApi.csproj": {
+    "C:\\Users\\alice\\Desktop\\Новая папка (20)\\PizzaShop\\PizzaApi\\PizzaApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alice\\Desktop\\Новая папка (20)\\PizzaApi\\PizzaApi.csproj",
+        "projectUniqueName": "C:\\Users\\alice\\Desktop\\Новая папка (20)\\PizzaShop\\PizzaApi\\PizzaApi.csproj",
         "projectName": "PizzaApi",
-        "projectPath": "C:\\Users\\alice\\Desktop\\Новая папка (20)\\PizzaApi\\PizzaApi.csproj",
+        "projectPath": "C:\\Users\\alice\\Desktop\\Новая папка (20)\\PizzaShop\\PizzaApi\\PizzaApi.csproj",
         "packagesPath": "C:\\Users\\alice\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alice\\Desktop\\Новая папка (20)\\PizzaApi\\obj\\",
+        "outputPath": "C:\\Users\\alice\\Desktop\\Новая папка (20)\\PizzaShop\\PizzaApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -8,15 +8,15 @@
         price:Number,
         category:String,
     }
- 
+
     $.ajax({
-        url: "https://localhost:7085/api/Product",
+        url: "https://localhost:7085/api/Product/drinks",
         type: "get",
         success: function (response) {
 
             product = response;
-            let productEl = $("#productHome");
-            for (let i = 0; i < 3; i++)
+            let productEl = $("#productDrinks");
+            for (let i = 0; i < product.length; i++)
             {
                 productEl.append(get_card(product[i]));
                 $(document).on("click","#product-"+product[i].productId,function(){
@@ -29,16 +29,16 @@
                             ff.append(getProduct(response[i]))
                         }})
                 });
-           
-            }
-           
 
-      
-    
+            }
+
+
+
+
         }
 
     });
-    
+
     function get_card(product) {
         let card = `
  <div class="col-lg-4 mb-5"   id="product-${product.id}">
@@ -75,11 +75,11 @@
                     </div>
 
     `;
-        
+
         return $(card);
-       
+
     }
-    
+
     function getProduct(product){
         let info = `
         <div>${product.name}</div>
@@ -89,5 +89,5 @@
     }
 
 
-    
+
 });
