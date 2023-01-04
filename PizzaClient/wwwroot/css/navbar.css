@@ -1,0 +1,32 @@
+﻿*{
+    margin:0;
+    padding:0;
+    font-family: Open Sans,sans-serif;
+    box-sizing: border-box;
+
+}
+
+.nav-item a, p{
+    letter-spacing: .05em;
+    font-size: 18px;
+    font-weight: 400;
+    color:white!important;
+}
+.nav-link{
+    cursor: pointer;
+}
+.nav-link:hover{
+    cursor: pointer;
+    font-weight: bolder;
+
+}
+.offcanvas-footer-menu{
+
+}
+@media screen and (max-width: 991px) {
+    .offcanvas-footer-menu {
+        position: absolute;
+        bottom: 20px;
+        right: 50%;
+    }
+}
