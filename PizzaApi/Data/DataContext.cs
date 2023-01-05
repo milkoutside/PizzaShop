@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PizzaApi.Models;
 
 namespace PizzaApi.Data;
 
@@ -10,5 +11,7 @@ public class DataContext : DbContext
 
     }
 
-    public DbSet<Product> Product { get; set; }
+    public DbSet<Pizza> Pizza { get; set; }
+    
+    public DbSet<Drinks> Drinks { get; set; }
 }

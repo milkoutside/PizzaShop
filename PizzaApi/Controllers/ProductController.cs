@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PizzaApi.Data;
+using PizzaApi.Models;
 
 namespace PizzaApi.Controllers;
 [ApiController]
@@ -15,9 +16,9 @@ public class ProductController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<List<Product>> GetPizza()
+    public async Task<List<Pizza>> GetPizza()
     {
-        var productList = await _context.Product.Where(p => p.Category == "Pizza").ToListAsync();
+        var productList = await _context.Pizza.ToListAsync();
 
         return productList;
     }
@@ -25,28 +26,47 @@ public class ProductController : ControllerBase
     [HttpGet("{productId}")]
     public async Task<Product> GetProduct(int productId)
     {
-        var product = await _context.Product.FirstOrDefaultAsync(p => p.Id == productId);
+        var pizza = await _context.Pizza.FirstOrDefaultAsync(p => p.ProductId == productId);
         
-        if (product == null)
+        var drinks = await _context.Drinks.FirstOrDefaultAsync(p => p.ProductId == productId);
+        
+        if (pizza == null && drinks == null)
         {
             throw new Exception("Null dbProduct");
         }
+
+        if (pizza == null && drinks != null)
+        {
+            return drinks;
+        }
         
-        return product;
+        return pizza;
     }
 
     [HttpGet("togetgerProduct/{productId}")]
     public async Task<List<Product>> GetTakeTogetherProduct(int productId)
     {
-        var product = await _context.Product.Where(p => p.ProductId != productId).ToListAsync();
+        if (productId != null)
+        {
+            if (productId >= 100)
+            {
+                var pizza = await _context.Pizza.Take(4).ToListAsync();
 
-        return product;
+                return new List<Product>(pizza);
+            }
+
+           
+        }
+        var drinks = await _context.Drinks.ToListAsync();
+        
+        return new List<Product>(drinks);
+
     }
 
     [HttpGet("drinks")]
-    public async Task<List<Product>> GetDrinks()
+    public async Task<List<Drinks>> GetDrinks()
     {
-        var drinks = await _context.Product.Where(d => d.Category == "Drinks").ToListAsync();
+        var drinks = await _context.Drinks.ToListAsync();
 
         return drinks;
     }

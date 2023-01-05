@@ -8,10 +8,10 @@
         price:Number,
         category:String,
     }
-    let localUrl = location.href.indexOf('?id=')+4;
-    console.log(location.href[localUrl],"Das")
+    let locationId = location.href.substring(location.href.indexOf('?id=')+4);
+    console.log(locationId,"Das")
     $.ajax({
-        url: "https://localhost:7085/api/Product/"+ location.href[localUrl],
+        url: "https://localhost:7085/api/Product/"+ locationId,
         type: "get",
         success: function (response) {
             
@@ -19,7 +19,7 @@
             productPage.append(getProduct(response));
         }})
     $.ajax({
-        url: "https://localhost:7085/api/Product/togetgerProduct/"+ location.href[localUrl],
+        url: "https://localhost:7085/api/Product/togetgerProduct/"+ locationId,
         type: "get",
         success: function (response) {
             let productTogether = $("#productTogether");

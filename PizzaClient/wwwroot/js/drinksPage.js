@@ -13,7 +13,6 @@
         url: "https://localhost:7085/api/Product/drinks",
         type: "get",
         success: function (response) {
-
             product = response;
             let productEl = $("#productDrinks");
             for (let i = 0; i < product.length; i++)
