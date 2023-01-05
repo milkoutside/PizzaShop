@@ -50,16 +50,21 @@ public class ProductController : ControllerBase
         {
             if (productId >= 100)
             {
-                var pizza = await _context.Pizza.Take(4).ToListAsync();
-
-                return new List<Product>(pizza);
+                var pizza = await _context.Pizza.Take(4).ToListAsync<Product>();
+                
+                return pizza;
             }
 
            
         }
-        var drinks = await _context.Drinks.ToListAsync();
+
+        var listProduct = await _context.Pizza.Take(3).ToListAsync<Product>();
         
-        return new List<Product>(drinks);
+        var drinks = await _context.Drinks.FirstOrDefaultAsync();
+        
+        listProduct.Add(drinks);
+        
+        return listProduct;
 
     }
 
