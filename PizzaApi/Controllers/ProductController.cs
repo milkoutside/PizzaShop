@@ -52,8 +52,7 @@ public class ProductController : ControllerBase
     [HttpGet("togetgerProduct/{productId}")]
     public async Task<List<Product>> GetTakeTogetherProduct(int productId)
     {
-        if (productId != null)
-        {
+        
             if (productId >= 100)
             {
                 var pizza = await _context.Pizza.ToListAsync<Product>();
@@ -75,10 +74,6 @@ public class ProductController : ControllerBase
 
                 return listTogether;
             }
-            
-        }
-
-        return null;
 
     }
 
