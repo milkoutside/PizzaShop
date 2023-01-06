@@ -21,6 +21,7 @@
     $.ajax({
         url: "https://localhost:7085/api/Product/togetgerProduct/"+ locationId,
         type: "get",
+        async:true,
         success: function (response) {
             let productTogether = $("#productTogether");
             for(let i = 0; i < response.length; i++)

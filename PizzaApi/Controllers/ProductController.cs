@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using PizzaApi.Data;
 using PizzaApi.Models;
+using PizzaApi.Services.ProductServices;
 
 namespace PizzaApi.Controllers;
 [ApiController]
@@ -10,9 +11,14 @@ public class ProductController : ControllerBase
 {
     private readonly DataContext _context;
 
-    public ProductController(DataContext context)
+    private readonly ProductService _productService;
+
+    public ProductController(DataContext context, ProductService productService)
     {
         _context = context;
+
+        _productService = productService;
+
     }
 
     [HttpGet]
@@ -50,21 +56,29 @@ public class ProductController : ControllerBase
         {
             if (productId >= 100)
             {
-                var pizza = await _context.Pizza.Take(4).ToListAsync<Product>();
+                var pizza = await _context.Pizza.ToListAsync<Product>();
+                
+                pizza =  await _productService.GetProductTogether(pizza,4);
                 
                 return pizza;
+             
             }
+            else
+            {
+                var pizza = await _context.Pizza.ToListAsync<Product>();
+                
+                var drinks = await _context.Drinks.ToListAsync<Product>();
 
-           
+                var listTogether = await _productService.GetProductTogether(pizza, 3);
+                
+                listTogether.Add(drinks[0]);
+
+                return listTogether;
+            }
+            
         }
 
-        var listProduct = await _context.Pizza.Take(3).ToListAsync<Product>();
-        
-        var drinks = await _context.Drinks.FirstOrDefaultAsync();
-        
-        listProduct.Add(drinks);
-        
-        return listProduct;
+        return null;
 
     }
 
