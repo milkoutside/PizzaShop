@@ -9,19 +9,29 @@
 .nav-item a, p{
     letter-spacing: .05em;
     font-size: 18px;
-    font-weight: 400;
-    color:white!important;
+    font-weight: 600;
+    color: #e5dada !important;
+}
+.navbar-logo{
+    width: 204px;
+    height: 32px;
+}
+@media screen and (max-width:1200px){
+    .navbar-logo{
+        width: 150px;
+        height: 50px;
+    }
 }
 .nav-link{
     cursor: pointer;
 }
 .nav-link:hover{
     cursor: pointer;
-    font-weight: bolder;
-
+    color: white!important;
+  
 }
 .offcanvas-footer-menu{
-
+    
 }
 @media screen and (max-width: 991px) {
     .offcanvas-footer-menu {
@@ -29,4 +39,35 @@
         bottom: 20px;
         right: 50%;
     }
+}
+.sign-in-button button{
+    padding: 5px 25px 5px 25px;
+    border-radius: 10px;
+    background: #e0e0e0;
+    font-weight: 700;
+    font-size:15px;
+}
+@media screen and (max-width: 900px) {
+    .sign-in-button button{
+        padding: 5px 10px 5px 10px;
+        border-radius: 10px;
+        background: #e0e0e0;
+        font-weight: 600;
+        font-size:15px;
+    }
+}
+.navbar-cart{
+    
+    fill: #e31837;
+}
+.navbar-cart span{
+    padding: 1px 4px 1px 4px;
+    border: 1px solid #e5e5e5;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 800;
+    background: #e0e0e0;
+    color:black;
+    position: absolute;
+    top:5px;
 }
