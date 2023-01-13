@@ -1,0 +1,160 @@
+﻿*{
+    margin:0;
+    padding:0;
+    font-family: Open Sans,sans-serif;
+    box-sizing: border-box;
+
+}
+
+.nav-item a, p{
+    letter-spacing: .05em;
+    font-size: 18px;
+    font-weight: 600;
+    color: #e5dada !important;
+}
+.navbar-logo{
+    width: 204px;
+    height: 32px;
+}
+@media screen and (max-width:1200px){
+    .navbar-logo{
+        width: 150px;
+        height: 50px;
+    }
+}
+.nav-link{
+    cursor: pointer;
+}
+.nav-link:hover{
+    cursor: pointer;
+    color: white!important;
+  
+}
+.offcanvas-footer-menu{
+    
+}
+@media screen and (max-width: 991px) {
+    .offcanvas-footer-menu {
+        position: absolute;
+        bottom: 20px;
+        right: 50%;
+    }
+}
+.sign-in-button button{
+    padding: 5px 25px 5px 25px;
+    border-radius: 10px;
+    background: #e0e0e0;
+    font-weight: 700;
+    font-size:15px;
+}
+@media screen and (max-width: 900px) {
+    .sign-in-button button{
+        padding: 5px 10px 5px 10px;
+        border-radius: 10px;
+        background: #e0e0e0;
+        font-weight: 600;
+        font-size:15px;
+    }
+}
+.navbar-cart{
+    
+    fill: #e31837;
+}
+.navbar-cart span{
+    padding: 1px 4px 1px 4px;
+    border: 1px solid #e5e5e5;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 800;
+    background: #e0e0e0;
+    color:black;
+    position: absolute;
+    top:5px;
+}
+.modal-sign-in{
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 150vh;
+    width: 120vw;
+    backdrop-filter: blur(2px);
+
+}
+.modal-sign-in-container{
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    width: 40vw;
+    height:70vh;
+    background: #e0ecfc;
+    border-radius: 5px;
+}
+@media screen and (max-width: 600px)
+{
+    .modal-sign-in-container
+    {
+        height: 100vh;
+        width: 100vw;
+        z-index: 40;
+        top:0;
+        left:0;
+        text-align: center;
+    }
+}
+.modal-sign-in-header{
+    height: 10%;
+    border-bottom: black 1px solid;
+    display: block;
+}
+.modal-sign-header-exit{
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    top:0;
+    font-size: 20px;
+    font-weight: 600;
+}
+.modal-sign-in-body{
+}
+.input-sign{
+    margin-top: 5%;
+    text-align: center;
+    position: relative;
+    margin-right: 30%;
+}
+.input-sign span{
+    position: absolute;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: -.03em;
+    color: #787e9e;
+}
+.input-sign input {
+    box-sizing: border-box;
+    position: absolute;
+    min-height: 42px;
+    padding: 13px 16px 0;
+    border: 1px solid #30334d;
+    border-radius: 4px;
+    color: #fff;
+    background: #32334f;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -.03em;
+}
+.profile{
+    border: 2px solid black;
+    background: #e0e0e0;
+    border-radius: 60%;
+    transition: border-color .3s;
+    width: 45px;
+    height: 45px;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    cursor: pointer;
+}

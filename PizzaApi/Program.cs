@@ -25,10 +25,10 @@ var app = builder.Build();
 
 
 
-app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseDefaultFiles();
+app.UseStaticFiles();
 app.UseHttpsRedirection();
 app.UseCors("Pizza");
 app.UseAuthentication();

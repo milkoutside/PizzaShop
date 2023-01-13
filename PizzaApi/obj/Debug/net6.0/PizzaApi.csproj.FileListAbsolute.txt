@@ -136,3 +136,4 @@ C:\Users\alice\Desktop\Новая папка (20)\PizzaShop\PizzaApi\obj\Debug\n
 C:\Users\alice\Desktop\Новая папка (20)\PizzaShop\PizzaApi\obj\Debug\net6.0\PizzaApi.pdb
 C:\Users\alice\Desktop\Новая папка (20)\PizzaShop\PizzaApi\obj\Debug\net6.0\PizzaApi.genruntimeconfig.cache
 C:\Users\alice\Desktop\Новая папка (20)\PizzaShop\PizzaApi\obj\Debug\net6.0\ref\PizzaApi.dll
+C:\Users\alice\Desktop\Новая папка (20)\PizzaShop\PizzaApi\bin\Debug\net6.0\PizzaApi.staticwebassets.runtime.json

@@ -1,15 +1,7 @@
 ﻿$(function(){
-    let product = {
-        id:Number,
-        productId:String,
-        name:String,
-        image:[],
-        ingredients:Number,
-        price:Number,
-        category:String,
-    }
+
     let locationId = location.href.substring(location.href.indexOf('?id=')+4);
-    console.log(locationId,"Das")
+
     $.ajax({
         url: "https://localhost:7085/api/Product/"+ locationId,
         type: "get",
