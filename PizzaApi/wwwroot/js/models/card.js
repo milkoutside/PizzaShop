@@ -31,7 +31,7 @@ export class card{
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="button-product-add text-end">
+                                <div id="addToCart-${product.productId}" class="button-product-add text-end">
                                     <button>В корзину</button>
                                 </div>
                             </div>

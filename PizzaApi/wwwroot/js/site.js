@@ -1,6 +1,9 @@
 ﻿import {product} from './models/product.js';
 import {card} from './models/card.js';
+import {Cart} from './models/cart.js';
+
 $(function(){
+    let cart = new Cart();
     let pr = new product();
     let cd = new card();
     $.ajax({
@@ -13,15 +16,8 @@ $(function(){
             for (let i = 0; i < 3; i++)
             {
                 productEl.append(cd.getCard(pr[i]));
-                $(document).on("click","#product-"+pr[i].productId,function(){
-                    console.log(pr[i].name);
-                    $.ajax({
-                        url: "https://localhost:7085/api/Product/"+pr[i].productId,
-                        type: "get",
-                        success: function (response) {
-                            let ff = $("#pr"); //для корзины
-                            ff.append(getProduct(response[i]))
-                        }})
+                $(document).on("click","#addToCart-"+pr[i].productId,function(){
+                    cart.addToCart(pr[i]);
                 });
             }
         }
