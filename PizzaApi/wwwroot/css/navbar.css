@@ -5,6 +5,10 @@
     box-sizing: border-box;
 
 }
+.header{
+    max-height: 54px;
+    overflow: hidden;
+}
 .nav-item a, p{
     letter-spacing: .05em;
     font-size: 18px;
@@ -29,13 +33,18 @@
     color: white!important;
   
 }
-.offcanvas-footer-menu{
-    
+@media screen and (max-width: 1200px) {
+    .navbar-expand-xl {
+        position: absolute;
+        right: 0;
+        max-height: 54px;
+    }
 }
+
 @media screen and (max-width: 991px) {
     .offcanvas-footer-menu {
         position: absolute;
-        bottom: 20px;
+        bottom: 30px;
         right: 50%;
     }
 }

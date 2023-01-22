@@ -1,7 +1,7 @@
 export function createHeader(){
     let header = `
     <div class="row">
-        <div class="col-6 col-lg-4  bg-dark pt-lg-3 pt-1 order-1">
+        <div class="col-6 col-xl-4  bg-dark pt-xl-3 pt-1 order-1">
             <a class="navbar-brand mx-lg-5 mx-2">
 
                 <a href="index.html">
@@ -53,9 +53,9 @@ export function createHeader(){
                 </a>
             </a>
         </div>
-        <div class="col-lg-6 col-4  bg-dark order-lg-2 order-3">
-            <nav aria-label="Offcanvas navbar large" class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <button aria-controls="offcanvasNavbar2" class="navbar-toggler order-1 mx-lg-5 mx-4"
+        <div class="col-xl-6 col-4  bg-dark order-xl-2 order-3">
+            <nav aria-label="Offcanvas navbar large" class="navbar navbar-expand-xl navbar-dark bg-dark">
+                <button aria-controls="offcanvasNavbar2" class="navbar-toggler order-1 mx-xl-5 mx-4"
                         data-bs-target="#offcanvasNavbar2"
                         data-bs-toggle="offcanvas" type="button">
                     <span class="navbar-toggler-icon"></span>
@@ -68,7 +68,7 @@ export function createHeader(){
                         <button aria-label="Close" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                                 type="button"></button>
                     </div>
-                    <div class="offcanvas-body bg-dark mx-lg-5 mx-0">
+                    <div class="offcanvas-body bg-dark mx-xl-5 mx-0">
                         <div></div>
                         <ul class="navbar-nav flex-grow-1  mt-2">
                             <li class="nav-item">
@@ -79,9 +79,6 @@ export function createHeader(){
                             </li>
                             <li class="nav-item">
                                 <a href="drinks.html" class="nav-link">Напитки</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link">О нас</a>
                             </li>
                             <li class="offcanvas-footer-menu bg-dark text-white mt-2 mx-lg-5">
                                 
@@ -99,7 +96,7 @@ export function createHeader(){
                 </div>
             </nav>
         </div>
-        <div id="cartModal" class="navbar-cart col-sm-2 col bg-dark pt-3 order-lg-3 order-2">
+        <div id="cartModal" class="navbar-cart col-sm-2 col bg-dark pt-3 order-xl-3 order-2">
             <svg width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 510"><path  d="M153,408c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S181.05,408,153,408z M0,0v51h51l91.8,193.8L107.1,306 c-2.55,7.65-5.1,17.85-5.1,25.5c0,28.05,22.95,51,51,51h306v-51H163.2c-2.55,0-5.1-2.55-5.1-5.1v-2.551l22.95-43.35h188.7 c20.4,0,35.7-10.2,43.35-25.5L504.9,89.25c5.1-5.1,5.1-7.65,5.1-12.75c0-15.3-10.2-25.5-25.5-25.5H107.1L84.15,0H0z M408,408 c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S436.05,408,408,408z"></path></svg>
             <span id="counterCart" class="mt-4"></span>
         </div>
