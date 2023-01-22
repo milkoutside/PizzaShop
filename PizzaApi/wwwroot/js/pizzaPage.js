@@ -26,11 +26,5 @@ $(function(){
     });
 
    
-    function getProduct(product){
-        let info = `
-        <div>${product.name}</div>
-        <div>${product.price}</div>
-`
-        return $(info);
-    }
+
 });

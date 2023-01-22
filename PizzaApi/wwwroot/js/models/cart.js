@@ -1,30 +1,37 @@
 ﻿import {product} from "./product.js";
 
 export class Cart{
-    cart = new product();
-    localCart = [];
-    
+
+    cartList = [product];
+    totalSum
     
     addToCart(product){
-                
-                if( JSON.parse(localStorage.getItem('cart')))
+            let localCart = [];    
+                if(JSON.parse(localStorage.getItem('cart')))
                 {   
-                    this.localCart = JSON.parse(localStorage.getItem('cart'));
-                    this.localCart.push(product.id);
-                    localStorage.setItem('cart',JSON.stringify(this.localCart));
+                    localCart = JSON.parse(localStorage.getItem('cart'));
+                    localCart.push(product.id);
+                    localStorage.setItem('cart',JSON.stringify(localCart));
                 }
    
                 else{
-                    this.localCart.push(product.id);
-                    localStorage.setItem('cart',JSON.stringify(this.localCart));
+                    localCart.push(product.id);
+                    localStorage.setItem('cart',JSON.stringify(localCart));
                 }
                 this.addCounterCart(); //обновление счетчика корзины в navbar
     }
     addCounterCart(){
-        let counter = JSON.parse(localStorage.getItem('cart')).length;
-        let counterCart   = $('#counterCart');
-        counterCart.text(counter);
+        let counter = JSON.parse(localStorage.getItem('cart'));
+        let counterCart = $('#counterCart');
+        if(counter != null && counter.length > 0)
+            counterCart.text(counter.length);
+        else
+        {
+            counterCart.text("0");
+        }
         
     }
+    
+   
     
 }

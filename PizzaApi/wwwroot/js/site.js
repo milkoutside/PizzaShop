@@ -13,7 +13,7 @@ $(function(){
 
             pr = response;
             let productEl = $("#productHome");
-            for (let i = 0; i < 3; i++)
+            for (let i = 0; i < 4; i++)
             {
                 productEl.append(cd.getCard(pr[i]));
                 $(document).on("click","#addToCart-"+pr[i].productId,function(){
@@ -30,4 +30,5 @@ $(function(){
         return $(info);
     }
     console.log("asd")
+   
 });

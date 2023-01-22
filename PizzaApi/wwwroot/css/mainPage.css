@@ -22,36 +22,10 @@ body{
     background: #f8f8f8;
     padding-bottom: 20vh;
 }
-.container-favorite{
 
-    margin-right: auto;
-    width: 100%;
-    margin-left: 5%;
-}
-@media screen and (max-width: 990px) {
-    .container-favorite {
-        width:100%;
-        margin-left: 8%;
-    }
-}
-@media screen and (max-width: 770px) {
-    .container-favorite {
-        width:60%;
-        margin-left: 25%;
-    }
-}
 .card-container{
-    position: relative;
-
+   
 }
-@media screen and (max-width: 1199px) {
-    .card-container {
-        width:100%;
-        margin-left: -2%;
-
-    }
-}
-
 .product-card{
     border-radius: 10px;
     width: 250px;
@@ -59,11 +33,10 @@ body{
     background: white;
     padding: 10px;
     border: 1px solid #e0e0e0;
+    margin: 0 auto;
 }
 
 .product-image img{
-
-    
     border-radius: 5px;
     height: 100%;
     width: 100%;

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PizzaApi.Data;
+using PizzaApi.Services.CartService;
 using PizzaApi.Services.ProductServices;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ builder.Services.AddCors(options => options.AddPolicy(name: "Pizza",
 
     }));
 builder.Services.AddSingleton<ProductService>();
+builder.Services.AddTransient<CartService>();
 builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseSqlServer("Server = DESKTOP-BI84236;Database=Pizza;Trusted_Connection=True;Encrypt=False;TrustServerCertificate=true;");

@@ -57,7 +57,7 @@ public class ProductController : ControllerBase
             {
                 var pizza = await _context.Pizza.ToListAsync<Product>();
                 
-                pizza =  await _productService.GetProductTogether(pizza,4);
+                pizza =  await _productService.GetProductTogether(pizza,4, productId);
                 
                 return pizza;
              
@@ -68,9 +68,9 @@ public class ProductController : ControllerBase
                 
                 var drinks = await _context.Drinks.ToListAsync<Product>();
 
-                var listTogether = await _productService.GetProductTogether(pizza, 3);
-                
-                listTogether.Add(drinks[0]);
+                var listTogether = await _productService.GetProductTogether(pizza, pizza.Count, productId);
+
+                listTogether[3] = drinks[0]; 
 
                 return listTogether;
             }
