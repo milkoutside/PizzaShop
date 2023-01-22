@@ -35,6 +35,10 @@ body{
     border: 1px solid #e0e0e0;
     margin: 0 auto;
 }
+.product-card:hover{
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
 
 .product-image img{
     border-radius: 5px;
