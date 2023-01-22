@@ -1,7 +1,10 @@
-﻿$(function(){
+﻿import {product} from './models/product.js';
+import {Cart} from './models/cart.js';
+$(function(){
 
     let locationId = location.href.substring(location.href.indexOf('?id=')+4);
-
+    let pr = new product();
+    let cart = new Cart();
     $.ajax({
         url: "https://localhost:7085/api/Product/"+ locationId,
         type: "get",
@@ -9,6 +12,10 @@
             
             let productPage = $("#productPage");
             productPage.append(getProduct(response));
+            pr = response;
+            $(document).on("click","#addToCart-"+pr.productId,function(){
+                cart.addToCart(pr);
+            });
         }})
     $.ajax({
         url: "https://localhost:7085/api/Product/togetgerProduct/"+ locationId,
@@ -31,7 +38,7 @@
     <div class="mt-5 mx-5 product-ingredients text-start">
          ${product.ingredients}
     </div>
-     <div class="product-button-garbage">
+     <div id="addToCart-${product.productId}" class="product-button-garbage">
         <button>В корзину</button>
      </div>
   </div>
