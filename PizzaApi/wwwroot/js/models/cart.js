@@ -1,9 +1,9 @@
 ﻿import {product} from "./product.js";
 
 export class Cart{
-
-    cartList = [product];
-    totalSum
+    cartProducts = [product];
+    amount = []
+    cartSum
     
     addToCart(product){
             let localCart = [];    

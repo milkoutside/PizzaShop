@@ -27,17 +27,10 @@ public class CartController : Controller
         
         pizzaList.AddRange(drinksList);
 
-        List<Product> productList = await _cartService.GetCart(pizzaList, productId);
+        Cart productList = await _cartService.GetCart(pizzaList, productId);
 
-        var cartList = new Cart()
-        {
-            CartProducts = productList,
 
-            CartSum = productList.Sum(s => s.Price)
-            
-        };
-
-        return cartList;
+        return productList;
 
 
 

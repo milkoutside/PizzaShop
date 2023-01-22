@@ -2,17 +2,51 @@ namespace PizzaApi.Services.CartService;
 
 public class CartService
 {
-    public async Task<List<Product>> GetCart(List<Product> products, int[] cartId)
+    public async Task<Cart> GetCart(List<Product> productsCart, int[] cartId)
     {
-        List<Product> cart = new List<Product>();
+        List<Product> products = new List<Product>();
 
         foreach (var cd in cartId)
         {
-            cart.AddRange(products.Where(p=>p.Id == cd));
+            products.AddRange(productsCart.Where(p=>p.Id == cd));
         }
 
-        var sum = cart.Sum(s => s.Price);
+        var cart = await GetDistinctProducts(products, cartId);
         
         return cart;
+    }
+
+    private async Task<Cart> GetDistinctProducts(List<Product> cartProducts, int[] cartId)
+    {
+        int[] distinctCartId = cartId.Distinct().ToArray();
+        
+        var distinctCart = new List<Product>();
+
+        var amount = new List<int[]>();
+
+        for (int i = 0; i < distinctCartId.Length; i++)
+        {
+            var findProduct =  cartProducts.FirstOrDefault(c => c.Id == distinctCartId[i]);
+            
+            var findDuplicate = cartId.Count(c => c == distinctCartId[i]);
+            
+            findProduct.Price *= findDuplicate;
+            
+            amount.Add(new []{findProduct.Id,findDuplicate});
+            
+            distinctCart.Add(findProduct);
+        }
+
+        Cart cart = new Cart()
+        {
+            CartProducts = distinctCart,
+            
+            Amount = amount,
+            
+            CartSum = cartProducts.Sum(s => s.Price)
+        };
+
+        return cart;
+
     }
 }

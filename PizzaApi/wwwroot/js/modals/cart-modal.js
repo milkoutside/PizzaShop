@@ -22,7 +22,7 @@ export class CartModal{
             this.isOpen = false;
         }
     }
-    createProductsCard(cartList,cartSum)
+    createProductsCard(cartList, amount)
     {
         let productsCardHtml = `
      <div class="cart-item">
@@ -45,7 +45,7 @@ export class CartModal{
                                 <path d="M465.167,211.613H240.21H26.69c-8.424,0-26.69,11.439-26.69,34.316s18.267,34.316,26.69,34.316h213.52h224.959 c8.421,0,26.689-11.439,26.689-34.316S473.59,211.613,465.167,211.613z"></path>
                             </svg>
                         </button>
-                        <span>01</span>
+                        <span>${amount}</span>
                         <button class="quantity-control-btn" type="button">
                             <svg height="13" viewBox="0 0 24 24" width="13" xmlns="http://www.w3.org/2000/svg">
                                 <path d="m23,10h-8.5c-0.3,0-0.5-0.2-0.5-0.5v-8.5c0-0.6-0.4-1-1-1h-2c-0.6,0-1,0.4-1,1v8.5c0,0.3-0.2,0.5-0.5,0.5h-8.5c-0.6,0-1,0.4-1,1v2c0,0.6 0.4,1 1,1h8.5c0.3,0 0.5,0.2 0.5,0.5v8.5c0,0.6 0.4,1 1,1h2c0.6,0 1-0.4 1-1v-8.5c0-0.3 0.2-0.5 0.5-0.5h8.5c0.6,0 1-0.4 1-1v-2c0-0.6-0.4-1-1-1z"></path>
@@ -76,17 +76,19 @@ export class CartModal{
             contentType:"application/json",
             dataType:"JSON",
             success: function (response) {
-                cart.cartList = response.cartProducts;
-                cart.totalSum = response.cartSum;
-            
-                for (let i = 0; i < cart.cartList.length; i++)
+                 cart = response
+                console.log(cart.cartProducts[0],'cart')
+                console.log(cart,'responce')
+                for (let i = 0; i < cart.cartProducts.length; i++)
                 {
-                    $('#cartList').append(cardM.createProductsCard(cart.cartList[i]))
+                    console.log(cart.amount[i][0],'for')
+                    if(cart.cartProducts[i].productId === cart.amount[i][0])
+                    $('#cartList').append(cardM.createProductsCard(cart.cartProducts[i],cart.amount[i][1]))
                  
                 }
                 $('#cartList').append(`
     <div class="cart-modal-footer">
-        <div class="total-price"><p class="text-black">Итого:${cart.totalSum} грн</p></div>
+        <div class="total-price"><p class="text-black">Итого:${cart.cartSum} грн</p></div>
         <div class="cart-modal-content-button-design">
             <button class="cart-modal-button-design">Оформить</button>
         </div>
