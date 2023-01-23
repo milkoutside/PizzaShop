@@ -20,6 +20,41 @@ export class Cart{
                 }
                 this.addCounterCart(); //обновление счетчика корзины в navbar
     }
+    
+    deleteAllItems(productId,amount)
+    {   let localCart = [];
+        if(JSON.parse(localStorage.getItem('cart')))
+        {
+            localCart = JSON.parse(localStorage.getItem('cart'));
+            if(amount === 1)
+            {
+                localStorage.removeItem('cart')
+            }
+            else {
+                localCart.splice(localCart.indexOf(productId), localCart.filter(x => x === productId).length)
+                localStorage.setItem('cart', JSON.stringify(localCart));
+            }
+        }
+        this.addCounterCart()
+    }
+    deleteFromCart(productId)
+    {
+        let localCart = [];
+        if(JSON.parse(localStorage.getItem('cart')))
+        {
+            localCart = JSON.parse(localStorage.getItem('cart'));
+            if(localCart.length === 1)
+            {
+                localStorage.removeItem('cart')
+            }
+            else {
+                localCart.splice(localCart.indexOf(productId), 1)
+                localStorage.setItem('cart', JSON.stringify(localCart));
+            }
+        }
+
+        this.addCounterCart(); //обновление счетчика корзины в navbar
+    }
     addCounterCart(){
         let counter = JSON.parse(localStorage.getItem('cart'));
         let counterCart = $('#counterCart');
