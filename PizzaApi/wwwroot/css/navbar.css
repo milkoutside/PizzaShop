@@ -92,13 +92,14 @@
 .modal-sign-in-container{
     position: absolute;
     top: 10%;
-    left: 25%;
+    left: 30vw;
+    right: auto;
     width: 40vw;
     height:70vh;
     background: #fff;
     border-radius: 5px;
 }
-@media screen and (max-width: 600px)
+@media screen and (max-width: 900px)
 {
     .modal-sign-in-container
     {
@@ -125,12 +126,18 @@
     font-weight: 600;
 }
 .modal-sign-in-body{
+    margin-right: 30%;
+}
+@media screen and (max-width: 900px)
+{
+    .modal-sign-in-body{
+        margin-right: 40%;
+    }
 }
 .input-sign{
     margin-top: 5%;
     text-align: center;
     position: relative;
-    margin-right: 30%;
 }
 .input-sign span{
     position: absolute;
@@ -158,8 +165,7 @@
 .sign-in-button-modal-body{
     text-align: center;
     position: relative;
-    margin-right: 30%;
-    margin-top: 20%;
+    margin-top: 30%;
 }
 .sign-in-button-modal-body button{
     position: absolute;
@@ -177,12 +183,11 @@
 .register-button-modal-body{
     text-align: center;
     position: relative;
-    margin-right: 30%;
-    margin-top: 20%;
+    margin-top: 30%;
 }
 .register-button-modal-body button{
     position: absolute;
-    padding: 3px 8px 3px 8px;
+    padding: 3px 7px 3px 7px;
     border-radius: 8px;
     background: white;
     font-weight: 700;
