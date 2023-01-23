@@ -19,10 +19,8 @@ $(function(){
                 $(document).on("click","#addToCart-"+pr[i].productId,function(){
                     cart.addToCart(pr[i]);
                 });
-
             }
         }
     });
-    
-
+ 
 });
