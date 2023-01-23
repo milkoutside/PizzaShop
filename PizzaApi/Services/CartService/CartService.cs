@@ -43,7 +43,7 @@ public class CartService
             
             Amount = amount,
             
-            CartSum = cartProducts.Sum(s => s.Price)
+            CartSum = distinctCart.Sum(s => s.Price)
         };
 
         return cart;
