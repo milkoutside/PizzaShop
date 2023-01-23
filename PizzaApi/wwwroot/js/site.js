@@ -6,6 +6,7 @@ $(function(){
     let cart = new Cart();
     let pr = new product();
     let cd = new card();
+    
     $.ajax({
         url: "https://localhost:7085/api/Product",
         type: "get",
@@ -22,7 +23,4 @@ $(function(){
             }
         }
     });
-    
-    console.log("asd")
-   
 });
