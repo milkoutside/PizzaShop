@@ -1,41 +1,25 @@
-﻿import {signModal,registrationModal} from './modals/navbar-modal.js';
+﻿import {addEventsNavbar} from './modals/navbar-modal.js';
 import {Cart} from './models/cart.js';
 import {createHeader} from "./components/navbar-component.js";
-import {CartModal} from "./modals/cart-modal.js";
+import {CartModal,addEventsCartModal} from "./modals/cart-modal.js";
 
 $(function(){
     createHeader();
+    addEventsNavbar();
+    addEventsCartModal();
     let cart = new Cart();
     cart.addCounterCart();
-    let signIn = new signModal();
-    let reg = new registrationModal();
     let cartModal = new CartModal();
-    $(document).on("click","#openReg",function (){ //открывает регистрацию
-        signIn.closeModal();
-        reg.openModal();
-    })
-    $(document).on("click","#signIn",function (){
-        signIn.openModal();
-    })
-    $(document).on("click",".modal-sign-in",function (){ 
-        signIn.closeModal();
-    })
-    $(document).on("click","#openSign",function (){
-        reg.closeModal();
-        signIn.openModal();
-    })
-    $(document).on("click",".modal-sign-header-exit",function (){
-        signIn.closeModal();
-        reg.closeModal();
-    })
-    $(document).on("click",".modal-sign-in-container",function (event){ // убирает наследование закрытия на другие объекты
-        event.stopPropagation();
-    })
-    $(document).on("click","#cartModal",function (){
-        cartModal.createCard();
-    })
+    if(localStorage.getItem('r_fc') === 'true')
+    {
+        cartModal.createCard()
+        
+        localStorage.setItem('r_fc','false')
+    }
     let userInfo = localStorage.getItem("u_st");
+    
     let navbarItem = $("#sign-in");
+    
     navbarItem.append(createSignIn())
     
     function createSignIn() {
