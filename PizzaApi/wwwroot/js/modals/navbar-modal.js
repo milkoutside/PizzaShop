@@ -50,15 +50,15 @@
             <div class="modal-sign-in-body">
                     <div class="input-sign pb-2">
                       <input  type="text">
-                      <span>Enter new Phone</span>
+                      <span>New Phone</span>
                     </div>
                        <div class="input-sign pt-5">
                       <input  type="text">
-                      <span>Enter your Name and Surname</span>
+                      <span>New Name and Surname</span>
                     </div>
                           <div class="input-sign pt-5">
                       <input  type="text">
-                      <span>Enter new Password</span>
+                      <span>New Password</span>
                     </div>
                     <div class="register-button-modal-body">
                         <button>Зарегистрироваться</button>
@@ -80,3 +80,29 @@
 
         }
     }
+export function addEventsNavbar()
+{
+    let signIn = new signModal();
+    let reg = new registrationModal();
+    $(document).on("click","#openReg",function (){ //открывает регистрацию
+        signIn.closeModal();
+        reg.openModal();
+    })
+    $(document).on("click","#signIn",function (){
+        signIn.openModal();
+    })
+    $(document).on("click",".modal-sign-in",function (){
+        signIn.closeModal();
+    })
+    $(document).on("click","#openSign",function (){
+        reg.closeModal();
+        signIn.openModal();
+    })
+    $(document).on("click",".modal-sign-header-exit",function (){
+        signIn.closeModal();
+        reg.closeModal();
+    })
+    $(document).on("click",".modal-sign-in-container",function (event){ // убирает наследование закрытия на другие объекты
+        event.stopPropagation();
+    })
+}
